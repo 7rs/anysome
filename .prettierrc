@@ -1,0 +1,19 @@
+
+{
+    "printWidth": 120,
+    "useTabs": false,
+    "tabWidth": 2,
+    "singleQuote": false,
+    "semi": true,
+    "endOfLine": "lf",
+    "options.editorconfig": true,
+    "overrides": [
+        {
+            "files": [".prettierrc", "*.json"],
+            "options": {
+                "parser": "json",
+                "tabWidth": 4
+            }
+        }
+    ]
+}
