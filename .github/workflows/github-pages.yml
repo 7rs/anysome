@@ -3,6 +3,8 @@ name: GitHub Pages
 on:
   push:
     branches: [github-pages]
+  pull_request:
+    branches: [github-pages]
   workflow_dispatch:
 
 permissions:
