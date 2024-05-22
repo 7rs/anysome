@@ -1,0 +1,39 @@
+---
+import Landing from "../layouts/Landing.astro";
+---
+
+<Landing title="test">
+  <hgroup data-title>
+    <h1>Anysome</h1>
+    <p>Awesome list that included any categories.</p>
+  </hgroup>
+  <div data-buttons>
+    <a href="https://github.com/7rs/anysome">Source Code</a>
+    <a href="#">List</a>
+  </div>
+</Landing>
+
+<style lang="sass">
+  @import "../styles/global.sass"
+
+  [data-title]
+    text-align: center
+
+    h1
+      @include fonts(4rem, "auto")
+    p
+      @include fonts(2rem, "auto")
+
+  [data-buttons]
+    display: flex
+    justify-content: center
+    column-gap: 1rem
+    a
+      padding: 0.5rem
+      border: solid 1px black
+      text-decoration: none
+      color: black
+      &:hover
+        background-color: gray
+
+</style>
