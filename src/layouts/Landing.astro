@@ -22,7 +22,7 @@ const {title, lang = "en"} = Astro.props;
 </html>
 
 <style lang="sass">
-  @import "../styles/def.sass"
+  @use "../styles/api.sass" as api
 
   body
     display: flex
@@ -32,7 +32,7 @@ const {title, lang = "en"} = Astro.props;
     position: relative
 
   main
-    @include margins(3rem, 0)
+    @include api.margins(3rem, 0)
     height: 100%
     flex-grow: 1
     display: flex

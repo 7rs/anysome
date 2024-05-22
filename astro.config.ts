@@ -1,17 +1,21 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig } from "astro/config";
 
-// import path from 'path'
-
+import path from "path";
 // import path from 'node:path'
 
 export default defineConfig({
-  // vite: {
-  //   css: {
-  //     preprocessorOptions: {
-  //       sass: {
-  //         imports: path.resolve(__dirname, './src/styles/global.sass')
-  //       },
-  //     },
-  //   },
-  // },
-})
+  vite: {
+    // css: {
+    //   preprocessorOptions: {
+    //     sass: {
+    //       additionalData: '\n@use "@/styles/api.sass" as api\n',
+    //     },
+    //   },
+    // },
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+      },
+    },
+  },
+});

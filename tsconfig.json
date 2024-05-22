@@ -1,0 +1,16 @@
+{
+    "exclude": ["*node_modules*"],
+    "compilerOptions": {
+        "module": "nodenext",
+        "strictNullChecks": true,
+        "allowJs": true,
+        "declaration": true,
+        "baseUrl": ".",
+        "paths": {
+            "@layouts/*": ["src/layouts/*"],
+            "@components/*": ["src/components/*"],
+            "@styles/*": ["src/styles/*"],
+            "@/*": ["src/*"]
+        }
+    }
+}

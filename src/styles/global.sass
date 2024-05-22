@@ -1,8 +1,8 @@
-@import "./def"
+@use "./api" as api
 
 :where(*)
-    @include margins(0)
-    @include paddings(0)
+    @include api.margins(0)
+    @include api.paddings(0)
     box-sizing: border-box
 
 :where(body)
