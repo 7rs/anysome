@@ -19,12 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # - name: Install pnpm
-      #   uses: pnpm/action-setup@v2
-      #   with:
-      #     version: latest
-      #     run_install: false
-
       - name: Install and Build
         uses: withastro/action@v2
         with:
