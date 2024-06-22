@@ -1,11 +1,12 @@
 # Anysome  
 
   カテゴリ問わずのAwesomeリスト。  
-  Awesome list that included any categories.  
-
-  原文を日本語で書くが、英語への翻訳もしたい。  
-  gonna write in Japanese but wanna translate to English.  
 
 ## List
 
+<<<<<<< HEAD
 - [Android Apps](categories/android-apps.md)
+=======
+- [Android Apps](src/pages/list/android-app.md)
+- [Frontend](src/pages/list/frontend.md)
+>>>>>>> 7ef2cfe00cf8dd6ebfe8edca585f3b28e373b260
