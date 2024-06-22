@@ -1,0 +1,54 @@
+@mixin margins($all-or-y-or-top, $x-or-right: null, $bottom: null, $left: null)
+    @if $x-or-right == null and $bottom == null and $left == null
+        margin-top: $all-or-y-or-top
+        margin-bottom: $all-or-y-or-top
+        margin-left: $all-or-y-or-top
+        margin-right: $all-or-y-or-top
+    @else if $bottom == null and $left == null
+        margin-top: $all-or-y-or-top
+        margin-bottom: $all-or-y-or-top
+        margin-left: $x-or-right
+        margin-right: $x-or-right
+    @else if $left == null
+        margin-top: $all-or-y-or-top
+        margin-bottom: $bottom
+        margin-left: $x-or-right
+        margin-right: $x-or-right
+    @else
+        margin-top: $all-or-y-or-top
+        margin-left: $left
+        margin-right: $x-or-right
+        margin-bottom: $bottom
+
+@mixin paddings($all-or-y-or-top, $x-or-right: null, $bottom: null, $left: null)
+    @if $x-or-right == null and $bottom == null and $left == null
+        padding-top: $all-or-y-or-top
+        padding-bottom: $all-or-y-or-top
+        padding-left: $all-or-y-or-top
+        padding-right: $all-or-y-or-top
+    @else if $bottom == null and $left == null
+        padding-top: $all-or-y-or-top
+        padding-bottom: $all-or-y-or-top
+        padding-left: $x-or-right
+        padding-right: $x-or-right
+    @else if $left == null
+        padding-top: $all-or-y-or-top
+        padding-bottom: $bottom
+        padding-left: $x-or-right
+        padding-right: $x-or-right
+    @else
+        padding-top: $all-or-y-or-top
+        padding-left: $left
+        padding-right: $x-or-right
+        padding-bottom: $bottom
+
+@mixin fonts($size: 1rem, $height: null, $families...)
+    font-size: $size
+
+    @if $height == "auto"
+        line-height: $size * 1.6
+    @else if $height != null
+        line-height: $height
+
+    @if length($families) > 0
+        font-family: $families

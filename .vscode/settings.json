@@ -1,0 +1,25 @@
+{
+    // Editor
+    "editor.fontFamily": "'Fira Code', 'HackGen35 Console NFJ', monospace",
+    "editor.fontLigatures": true,
+    "editor.insertSpaces": true,
+    // Extensions
+    "prettier.configPath": "./.prettierrc",
+    "prettier.ignorePath": "./.prettierignore",
+    "stylelint.customSyntax": "stylelint-stylus/custom-syntax",
+    "stylelint.validate": ["astro"],
+    // File
+    "[astro]": {
+        "editor.tabSize": 2
+    },
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+    "[stylus]": {
+        "editor.tabSize": 2
+    },
+    "[json]": {
+        "editor.tabSize": 4
+    },
+    "workbench.editor.enablePreview": false
+}
