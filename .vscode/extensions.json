@@ -1,8 +1,10 @@
 {
     "recommendations": [
-        "davidanson.vscode-markdownlint",
-        "bierner.markdown-emoji",
-        "usernamehw.errorlens",
-        "editorconfig.editorconfig"
+        "editorconfig.editorconfig",
+        "astro-build.astro-vscode",
+        "esbenp.prettier-vscode",
+        "biomejs.biome",
+        "syler.sass-indented",
+        "unifiedjs.vscode-mdx"
     ]
 }

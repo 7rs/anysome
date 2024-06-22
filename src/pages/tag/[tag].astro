@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("stack");
+  const tags = [...new Set([...pages.map(stack => stack.data.tags)].flat())]
+
+  return tags.map((tag) => {
+    const filteredPosts = pages.filter((post) => post.data.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<div>
+  {posts.map((post) => post.slug)}
+</div>

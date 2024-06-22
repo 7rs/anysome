@@ -1,49 +1,27 @@
 ---
+import Header from "@layouts/Header.astro";
+import Footer from "@layouts/Footer.astro";
+
+import "@styles/fonts.sass";
+import "@styles/reset.sass";
+import "@styles/default.sass";
+
 export interface Props {
   title: string;
-  lang?: string;
 }
 
-import "../styles/global.sass"
-
-const {title, lang = "en"} = Astro.props;
+const { title } = Astro.props;
 ---
 
-<html lang={lang}>
+<html>
   <head>
     <title>{title}</title>
+    <meta charset="UTF-8" />
   </head>
 
-  <body>
-    <header>Anysome</header>
-    <main><slot /></main>
-    <footer>Licensed by CC0</footer>
+  <body class="flex flex-col min-h-dvh bg-slate-50">
+    <Header />
+    <main class="grow flex flex-col gap-4"><slot /></main>
+    <Footer />
   </body>
 </html>
-
-<style lang="sass">
-  @use "../styles/api.sass" as api
-
-  body
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    min-height: 100vh
-    position: relative
-
-  main
-    @include api.margins(3rem, 0)
-    height: 100%
-    flex-grow: 1
-    display: flex
-    flex-direction: column
-    row-gap: 3rem
-
-  header
-    position: sticky
-
-  header, footer
-    width: 100%
-    background-color: black
-    color: white
-</style>

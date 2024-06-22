@@ -9,14 +9,22 @@
         "dev": "astro dev"
     },
     "dependencies": {
-        "astro": "^4.8.5",
-        "sass": "^1.77.2"
+        "@astrojs/mdx": "^3.1.1",
+        "astro": "^4.11.0"
     },
     "devDependencies": {
-        "@types/node": "^20.12.12"
-    },
-    "engines": {
-        "node": ">=18",
-        "pnpm": ">=8"
+        "@biomejs/biome": "1.8.2",
+        "@eslint/js": "^9.5.0",
+        "@fontsource/biz-udpgothic": "^5.0.19",
+        "@fontsource/fira-sans": "^5.0.20",
+        "@iconify-json/logos": "^1.1.43",
+        "@types/bun": "latest",
+        "@types/node": "^20.14.8",
+        "astro-icon": "^1.1.0",
+        "prettier": "^3.3.2",
+        "prettier-plugin-astro": "^0.14.0",
+        "sass": "^1.77.6",
+        "stylus": "^0.63.0",
+        "unocss": "^0.61.0"
     }
 }

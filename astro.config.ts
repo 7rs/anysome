@@ -1,21 +1,12 @@
 import { defineConfig } from "astro/config";
+import icon from "astro-icon";
+import UnoCSS from "unocss/astro";
 
 // import path from "path";
 // import path from 'node:path'
+import mdx from "@astrojs/mdx";
 
+// https://astro.build/config
 export default defineConfig({
-  // vite: {
-  //   css: {
-  //     preprocessorOptions: {
-  //       sass: {
-  //         additionalData: '\n@use "@/styles/api.sass" as api\n',
-  //       },
-  //     },
-  //   },
-  //   resolve: {
-  //     alias: {
-  //       "@": path.resolve(__dirname, "src"),
-  //     },
-  //   },
-  // },
+  integrations: [icon(), UnoCSS(), mdx()]
 });
