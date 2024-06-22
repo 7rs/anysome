@@ -6,22 +6,34 @@
 [xda-badge]: https://img.shields.io/badge/xda-EA7100?style=for-the-badge&logo=xdadevelopers&logoColor=white
 [izzy-badge]: https://img.shields.io/badge/izzy%20on%20droid-03a1c4?style=for-the-badge
 
-<!--
-![GitHub][github-badge]
-![F-Droid][f-droid-badge]
-![Google Play][googleplay-badge]
-![Google Drive][googledrive-badge]
-![APKMirror][apkmirror-badge]
-![XDA][xda-badge]
-![IzzyOnDroid][izzy-badge]
+# Android App  
 
-| Developers | Language |
-| :--------- | :------ |
--->
+  ここにはGoogle Playでも配信可能な（もしくは配信済み）Androidアプリを紹介する。
+  重視しているのは、支払いに価値があるかどうか、安全性、使い勝手の３つである。
+
+## 各要点について  
+
+### 支払いに価値があるか  
+
+  単純に無料であるかどうかではない。無料であったとしても、
+  無料版に広告が付いているようなアプリは完全な無料と見なさない。
+  また、支払ったことによる恩恵についても述べる。  
+
+### 安全性  
+
+  安全な動作をするために、適切な手法が取られていて、過去に問題はあったかどうか。
+  開発元が突然変わり、異変は発生していないのか。またその新しい開発元は信頼できるのか。
+  アプリは第三者の独立した機関によって認証されているかなど。  
+
+### 使い勝手  
+
+  UIは小さすぎず、大きすぎず、ちょうどよいサイズであるか。
+  ユーザーを混乱させるようなものはないのか。
+  また、個人的な所感を含める。  
 
 [bitwarden]: https://bitwarden.com/
 
-### [Aegis Authenticator](https://getaegis.app/)  
+## [Aegis Authenticator](https://getaegis.app/)  
 
   | Developers | Language | Price | Source Code |
   | :--------- | :------: | :---: | :---------: |
@@ -54,7 +66,7 @@
 
 [k9mail]: https://k9mail.app/
 
-### [FairEmail](https://email.faircode.eu/)  
+## [FairEmail](https://email.faircode.eu/)  
 
   | Developers | Language | Price | Source Code |
   | :--------- | :------: | :---: | :---------: |
@@ -86,7 +98,7 @@
   > - [Wikipedia - K-9 Mail](https://w.wiki/9zKT)
   > - [GIGAZINE - 「Android版Thunderbird」にリブランド予定のメールアプリ「K-9 Mail」がセキュリティ監査を完了](https://gigazine.net/news/20230721-thunderbird-android-k-9-mail-security-audit/)
 
-### [Muzei](https://muzei.co/)  
+## [Muzei](https://muzei.co/)  
 
   | Developers | Language | Price | Source Code |
   | :--------- | :------: | :---: | :---------: |
@@ -109,7 +121,7 @@
   ローカル上かUnsplashなどのサービス上から**ランダムに壁紙が変更される**。
   また、**Unsplash以外のソース**が有志によってリリースされている。  
 
-### [MiXplorer](https://mixplorer.com/)  
+## [MiXplorer](https://mixplorer.com/)  
 
   | Developers | Language | Price | Source Code |
   | :--------- | :------: | :---: | :---------: |
@@ -137,7 +149,7 @@
   > - [駅前散策ブログ＠かわさき　HOT - Mixplorer 日本語化 等々、Androidファイラー「Mixplorer」について書いてみます。](https://blog.goo.ne.jp/oprsfr3saku/e/4cfb89c2c62b59e4ee18e15c5d437ae6)
   > - [駅前散策ブログ＠かわさき　HOT - 【Mixplorer】Silver版、揉めてない？って話。](https://blog.goo.ne.jp/oprsfr3saku/e/07a20c54a5b4a4377ede227847f7d85a)
 
-### [Fossify Gallery](https://github.com/FossifyOrg/Gallery)  
+## [Fossify Gallery](https://github.com/FossifyOrg/Gallery)  
 
   | Developers | Language | Price | Source Code |
   | :--------- | :------: | :---: | :---------: |
@@ -160,7 +172,7 @@
 
   などの機能を持っている。**軽い画像編集**の機能も備えている。  
 
-#### [Simple Gallery Pro](https://simplemobiletools.com/)  
+### [Simple Gallery Pro](https://simplemobiletools.com/)  
 
   [![GitHub][github-badge]](https://github.com/SimpleMobileTools/Simple-Gallery)
   [![APKMirror][apkmirror-badge]](https://www.apkmirror.com/apk/simple-mobile-tools/simple-gallery-pro-github-version/)
@@ -170,7 +182,7 @@
   無料版に広告が付くようになった。
   開発はクローズドで行われているようだが、過去のバージョンは入手可能。  
 
-### [Read You](https://github.com/Ashinch/ReadYou)  
+## [Read You](https://github.com/Ashinch/ReadYou)  
 
   | Developers | Language |
   | :--------- | :------- |
@@ -183,7 +195,7 @@
   グループ分けやお気に入り機能、未読記事の表示や通知の機能を持つ。
   提供元によるが、記事の内容を取得してアプリ内で読むことも可能。  
 
-### [Invizible](https://invizible.net/en/)  
+## [Invizible](https://invizible.net/en/)  
 
   | Developers | Language |
   | :--------- | :------- |
@@ -199,7 +211,7 @@
   ホワイトリストやブラックリストの機能があり、
   実質的に広告ブロッカーとして使用することも出来る（DNSCryptでAdguardを通しても出来る）。  
 
-### [Musicolet](https://krosbits.in/musicolet/)  
+## [Musicolet](https://krosbits.in/musicolet/)  
 
   | Developers | Language |
   | :--------- | :------- |
