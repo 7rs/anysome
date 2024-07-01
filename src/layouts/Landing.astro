@@ -8,12 +8,13 @@ import "@styles/default.sass";
 
 export interface Props {
   title: string;
+  lang?: string;
 }
 
-const { title } = Astro.props;
+const { title, lang = "ja" } = Astro.props;
 ---
 
-<html>
+<html lang={lang}>
   <head>
     <title>{title}</title>
     <meta charset="UTF-8" />

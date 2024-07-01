@@ -16,8 +16,13 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
+
+const stack = posts.filter((post) => post.slug === tag)
 ---
 
+<section>
+  {stack.length > 0 && stack[0].slug}
+</section>
 <div>
   {posts.map((post) => post.slug)}
 </div>

@@ -1,24 +1,28 @@
 {
-  "printWidth": 120,
-  "useTabs": false,
-  "tabWidth": 2,
-  "singleQuote": false,
-  "semi": true,
-  "endOfLine": "lf",
-  "options.editorconfig": true,
-  "plugins": ["prettier-plugin-astro"],
-  "overrides": [
-    {
-      "files": [".vscode/*.json"],
-      "options": {
-        "tabWidth": 4
-      }
-    },
-    {
-      "files": ["*.astro"],
-      "options": {
-        "parser": "astro"
-      }
-    }
-  ]
+    "printWidth": 120,
+    "useTabs": false,
+    "tabWidth": 2,
+    "singleQuote": false,
+    "semi": true,
+    "endOfLine": "lf",
+    "options.editorconfig": true,
+    "plugins": [
+        "prettier-plugin-astro",
+        "prettier-plugin-svelte",
+        "prettier-plugin-stylus"
+    ],
+    "overrides": [
+        {
+            "files": ["*.astro"],
+            "options": {
+                "parser": "astro"
+            }
+        },
+        {
+            "files": ["*.styl"],
+            "options": {
+                "trailingComma": "all"
+            }
+        }
+    ]
 }

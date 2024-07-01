@@ -1,0 +1,54 @@
+---
+// cannot stupid developers even fix shittest errors?
+import { Stack } from "../../scripts/stack-meta";
+
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  frontmatter: Stack;
+}
+
+const { frontmatter } = Astro.props;
+
+const parsedFormatter = Stack.parse(frontmatter);
+---
+
+<header>
+  <section>
+    {parsedFormatter.icon && <Icon name={parsedFormatter.icon} />}
+    <hgroup>
+      <h1 data-pagefind-meta="name">{parsedFormatter.name}</h1>
+      <p data-pagefind-meta="description">{parsedFormatter.description}</p>
+    </hgroup>
+  </section>
+  <section>
+    <div>
+      {
+        parsedFormatter.tags.map((tag) => {
+          <a href="/" data-pagefind-meta="tag">
+            {tag}
+          </a>;
+        })
+      }
+    </div>
+  </section>
+  <section>
+    <div>
+      {
+        parsedFormatter.website && (
+          <a href="/" data-pagefind-meta="website">
+            {parsedFormatter.website}
+          </a>
+        )
+      }
+      {
+        parsedFormatter.repository && (
+          <a href="/" data-pagefind-meta="repository">
+            {parsedFormatter.repository}
+          </a>
+        )
+      }
+    </div>
+  </section>
+</header>
+<slot />

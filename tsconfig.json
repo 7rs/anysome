@@ -1,12 +1,16 @@
 {
+    "extends": "astro/tsconfigs/base",
     "exclude": ["*node_modules*"],
     "compilerOptions": {
         "module": "nodenext",
+        "moduleResolution": "NodeNext",
         "strictNullChecks": true,
         "allowJs": true,
         "declaration": true,
         "baseUrl": ".",
+        "outDir": "dist/",
         "paths": {
+            "@scripts/": ["scripts/*"],
             "@layouts/*": ["src/layouts/*"],
             "@components/*": ["src/components/*"],
             "@styles/*": ["src/styles/*"],

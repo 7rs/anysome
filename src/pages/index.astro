@@ -5,21 +5,24 @@ import Landing from "@layouts/Landing.astro";
 import Card from "@components/Card.astro";
 import Link from "@components/Link.astro";
 
+import StackList from "@components/list/StackList.svelte";
+
 const stacks = await getCollection("stack");
 const tags = [...new Set([...stacks.map(stack => stack.data.tags)].flat())]
 ---
 
 <Landing title="Anysome | Landing Page">
-  <section>
+  <StackList isDev={import.meta.env.DEV} client:only="svelte" />
+  <!-- <section>
     <h2>Anysome</h2>
     <p>ジャンルを問わないAwesomeリスト</p>
   </section>
   <section>
     <h2>tags</h2>
-    <div>
+    <div class="flex gap-2">
       {tags.map(tag => <Link href={`tag/${tag}`}>{tag}</Link>)}
     </div>
-  </section>
+  </section> -->
   <section>
     <h2>List</h2>
     <div>
