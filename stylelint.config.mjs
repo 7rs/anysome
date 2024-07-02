@@ -1,5 +1,21 @@
 /** @type {import('stylelint').Config} */
 
 export default {
-  extends: ["stylelint-stylus/standard"],
+  extends: [
+    "stylelint-config-html",
+    "stylelint-config-html/svelte",
+    "stylelint-config-html/astro",
+    "stylelint-stylus/standard",
+    "stylelint-config-sass-guidelines",
+  ],
+  customSyntax: "postcss-html",
+  overrides: [
+    {
+      files: ["*.styl", "**/*.styl"],
+      customSyntax: "postcss-styl",
+    },
+  ],
+  rules: {
+    "stylus/declaration-colon": "always",
+  },
 };

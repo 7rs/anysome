@@ -19,7 +19,7 @@
             }
         },
         {
-            "files": ["*.styl"],
+            "files": ["*.styl", "*.sass"],
             "options": {
                 "trailingComma": "all"
             }

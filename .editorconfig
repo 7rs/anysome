@@ -14,3 +14,6 @@ trim_trailing_whitespace = false
 
 [{.prettierrc,*.json}]
 indent_size = 4
+
+[{*.sass,*.scss,*.styl}]
+indent_size = 2
