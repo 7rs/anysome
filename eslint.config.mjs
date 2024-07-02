@@ -15,4 +15,10 @@ export default tseslint.config(
   {
     ignores: ["**/.astro/**", "**/.vscode/**", "**/dist/**", ".prettierrc"],
   },
+  {
+    files: ["env.d.ts", "**/env.d.ts"],
+    rules: {
+      "@typescript-eslint/triple-slash-reference": "off",
+    },
+  },
 );

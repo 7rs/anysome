@@ -29,5 +29,6 @@
     "stylelint.validate": ["css", "sass", "postcss", "stylus", "styl"],
     "stylelint.packageManager": "pnpm",
     "markdownlint.run": "onSave",
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "terminal.integrated.defaultProfile.windows": "Nu"
 }
