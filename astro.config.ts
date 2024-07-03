@@ -9,6 +9,8 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://7rs.github.io",
+  base: "/anysome",
   integrations: [icon(), UnoCSS(), mdx(), svelte()],
   vite: {
     resolve: {

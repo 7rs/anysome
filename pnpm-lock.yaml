@@ -57,6 +57,9 @@ importers:
       '@eslint/js':
         specifier: ^9.5.0
         version: 9.6.0
+      '@iconify/svelte':
+        specifier: ^4.0.2
+        version: 4.0.2(svelte@4.2.18)
       '@types/bun':
         specifier: latest
         version: 1.1.6
@@ -847,6 +850,11 @@ packages:
 
   '@iconify-json/logos@1.1.43':
     resolution: {integrity: sha512-UtvL1yDHUr9dl1Tqihh6K9m5dmbYKOYyLf3i9aKhymSW76QjOCGjpgQc0PQ4GJCAdU1cAMu+WO61TgPxdonrlg==}
+
+  '@iconify/svelte@4.0.2':
+    resolution: {integrity: sha512-6BSrU85FzGfhQD3bTXpnkCCvBAglEt8T9QednVnXAYm4C+d3464y+pYMzhQNJm5mPId2cuiw+2wXlDflXllHDw==}
+    peerDependencies:
+      svelte: '>4.0.0'
 
   '@iconify/tools@3.0.7':
     resolution: {integrity: sha512-DxfhFLMnooS34dHelpGUnnYrxLZHs0czC1CgrBhAbuL8ddVzBb2VEQm8kh9qGh7A34qeXAB5iSHH3A72rAaFrg==}
@@ -5214,6 +5222,11 @@ snapshots:
   '@iconify-json/logos@1.1.43':
     dependencies:
       '@iconify/types': 2.0.0
+
+  '@iconify/svelte@4.0.2(svelte@4.2.18)':
+    dependencies:
+      '@iconify/types': 2.0.0
+      svelte: 4.2.18
 
   '@iconify/tools@3.0.7':
     dependencies:

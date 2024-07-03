@@ -1,38 +1,13 @@
 ---
-import { getCollection } from "astro:content";
+// const stacks = await getCollection("stack");
+// const tags = [...new Set([...stacks.map(stack => stack.data.tags)].flat())]
 
-import Landing from "@layouts/Landing.astro";
-import Card from "@components/Card.astro";
-import Link from "@components/Link.astro";
-
-import StackList from "@components/list/StackList.svelte";
-
-const stacks = await getCollection("stack");
-const tags = [...new Set([...stacks.map(stack => stack.data.tags)].flat())]
+import Base from "@layouts/Base.astro";
+import SearchBar from "@components/SearchBar.svelte";
 ---
 
-<Landing title="Anysome | Landing Page">
-  <StackList isDev={import.meta.env.DEV} client:only="svelte" />
-  <!-- <section>
-    <h2>Anysome</h2>
-    <p>ジャンルを問わないAwesomeリスト</p>
-  </section>
+<Base title="Main Page | Anysome" className="bg-slate-200 px-12">
   <section>
-    <h2>tags</h2>
-    <div class="flex gap-2">
-      {tags.map(tag => <Link href={`tag/${tag}`}>{tag}</Link>)}
-    </div>
-  </section> -->
-  <section>
-    <h2>List</h2>
-    <div>
-      {
-        stacks.map((stack) => (
-          <Card name={stack.data.name} icon={stack.data.icon} href={stack.slug}>
-            {stack.data.description}
-          </Card>
-        ))
-      }
-    </div>
+    <SearchBar isDev={import.meta.env.DEV} baseUrl="/anysome" client:only="svelte" />
   </section>
-</Landing>
+</Base>

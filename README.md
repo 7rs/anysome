@@ -134,8 +134,6 @@
 ### 推奨ツール  
 
 <!--  -->
-- [Nushell](https://www.nushell.sh/ja/)  
-  クロスプラットフォームで、型の概念や見やすいエラーを追加する。Windowsに直接インストールできる唯一のシェルでもある。Rustで書かれているので高速。
 - [Starship](https://starship.rs/ja-jp/)  
   クソみたいなプロンプトを劇的に改善する。Rustで書かれているので高速。
 - [fnm](https://github.com/Schniz/fnm)  

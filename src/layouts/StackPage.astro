@@ -11,44 +11,48 @@ export interface Props {
 const { frontmatter } = Astro.props;
 
 const parsedFormatter = Stack.parse(frontmatter);
+
+import Base from "@layouts/Base.astro";
 ---
 
-<header>
-  <section>
-    {parsedFormatter.icon && <Icon name={parsedFormatter.icon} />}
-    <hgroup>
-      <h1 data-pagefind-meta="name">{parsedFormatter.name}</h1>
-      <p data-pagefind-meta="description">{parsedFormatter.description}</p>
-    </hgroup>
-  </section>
-  <section>
-    <div>
-      {
-        parsedFormatter.tags.map((tag) => {
-          <a href="/" data-pagefind-meta="tag">
-            {tag}
-          </a>;
-        })
-      }
-    </div>
-  </section>
-  <section>
-    <div>
-      {
-        parsedFormatter.website && (
-          <a href="/" data-pagefind-meta="website">
-            {parsedFormatter.website}
-          </a>
-        )
-      }
-      {
-        parsedFormatter.repository && (
-          <a href="/" data-pagefind-meta="repository">
-            {parsedFormatter.repository}
-          </a>
-        )
-      }
-    </div>
-  </section>
-</header>
-<slot />
+<Base title={`${parsedFormatter.name} | Anysome`}>
+  <header>
+    <section>
+      {parsedFormatter.icon && <Icon data-pagefind-meta="icon[data-icon]" name={parsedFormatter.icon} />}
+      <hgroup>
+        <h1 data-pagefind-meta="name">{parsedFormatter.name}</h1>
+        <p data-pagefind-meta="description">{parsedFormatter.description}</p>
+      </hgroup>
+    </section>
+    <section>
+      <div>
+        {
+          parsedFormatter.tags.map((tag) => {
+            <a href="/" data-pagefind-meta="tag">
+              {tag}
+            </a>;
+          })
+        }
+      </div>
+    </section>
+    <section>
+      <div>
+        {
+          parsedFormatter.website && (
+            <a href="/" data-pagefind-meta="website">
+              {parsedFormatter.website}
+            </a>
+          )
+        }
+        {
+          parsedFormatter.repository && (
+            <a href="/" data-pagefind-meta="repository">
+              {parsedFormatter.repository}
+            </a>
+          )
+        }
+      </div>
+    </section>
+  </header>
+  <slot />
+</Base>
