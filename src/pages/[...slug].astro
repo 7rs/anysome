@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   return paths;
 }
 
-const { slug } = Astro.params;
+// const { slug } = Astro.params;
 const page = Astro.props;
 
 const { Content } = await page.render();

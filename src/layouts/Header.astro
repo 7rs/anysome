@@ -1,6 +1,14 @@
 ---
+import { Icon } from "astro-icon/components";
+
+import Link from "@components/Link.astro";
 ---
 
-<header class="bg-slate-400">
-  <p class="text-5xl py-2 px-4">Anysome</p>
+<header class="static-bar">
+  <p>ANYSOME</p>
+  <nav class="menu-icons">
+    <Link href="/anysome"><Icon name="line-md:search" /></Link>
+    <Link href="/anysome/about"><Icon name="line-md:question-circle" /></Link>
+    <Icon name="line-md:sunny-filled-loop" />
+  </nav>
 </header>

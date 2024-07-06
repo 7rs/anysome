@@ -23,9 +23,18 @@ importers:
       '@fontsource/fira-sans':
         specifier: ^5.0.20
         version: 5.0.20
+      '@iconify-json/devicon':
+        specifier: ^1.1.45
+        version: 1.1.45
+      '@iconify-json/line-md':
+        specifier: ^1.1.38
+        version: 1.1.38
       '@iconify-json/logos':
         specifier: ^1.1.43
         version: 1.1.43
+      '@iconify-json/simple-icons':
+        specifier: ^1.1.108
+        version: 1.1.108
       astro:
         specifier: 4.11.3
         version: 4.11.3(@types/node@20.14.9)(sass@1.77.6)(stylus@0.63.0)(typescript@5.5.3)
@@ -69,6 +78,9 @@ importers:
       '@types/node':
         specifier: ^20.14.8
         version: 20.14.9
+      '@unocss/preset-uno':
+        specifier: ^0.61.0
+        version: 0.61.0
       eslint-plugin-astro:
         specifier: ^1.2.2
         version: 1.2.2(eslint@8.57.0)(typescript@5.5.3)
@@ -848,8 +860,17 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     deprecated: Use @eslint/object-schema instead
 
+  '@iconify-json/devicon@1.1.45':
+    resolution: {integrity: sha512-gKgfTr435D04V48kLMkjxZvg5mn3/Os9RE0VK5JeuypOOI/SrECIWOapIVJnDkNlrxF+dilBHCxmwq7bMCxr1A==}
+
+  '@iconify-json/line-md@1.1.38':
+    resolution: {integrity: sha512-W+y4G/7QqO1sTGUypwsm0UUwjbGt/BjRg4kZylek7BwH5EG8f1uUJgcZwRASjsH4xGL+LVQbw6FAGbQ1UHNCow==}
+
   '@iconify-json/logos@1.1.43':
     resolution: {integrity: sha512-UtvL1yDHUr9dl1Tqihh6K9m5dmbYKOYyLf3i9aKhymSW76QjOCGjpgQc0PQ4GJCAdU1cAMu+WO61TgPxdonrlg==}
+
+  '@iconify-json/simple-icons@1.1.108':
+    resolution: {integrity: sha512-GeC0Oy3j385BgjI0TadEzVbzM/cYjvAot22hJLNal3wKLmf/8t6RtH2PgRiNaK+SxELeDYdSAHocXxw4QoKXYA==}
 
   '@iconify/svelte@4.0.2':
     resolution: {integrity: sha512-6BSrU85FzGfhQD3bTXpnkCCvBAglEt8T9QednVnXAYm4C+d3464y+pYMzhQNJm5mPId2cuiw+2wXlDflXllHDw==}
@@ -5219,7 +5240,19 @@ snapshots:
 
   '@humanwhocodes/object-schema@2.0.3': {}
 
+  '@iconify-json/devicon@1.1.45':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/line-md@1.1.38':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/logos@1.1.43':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/simple-icons@1.1.108':
     dependencies:
       '@iconify/types': 2.0.0
 
