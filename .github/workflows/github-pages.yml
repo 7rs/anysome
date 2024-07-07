@@ -2,9 +2,9 @@ name: GitHub Pages
 
 on:
   push:
-    branches: [github-pages]
+    branches: [main]
   pull_request:
-    branches: [github-pages]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -30,7 +30,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4

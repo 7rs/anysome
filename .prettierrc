@@ -1,11 +1,8 @@
 {
     "printWidth": 120,
-    "useTabs": false,
-    "tabWidth": 2,
-    "singleQuote": false,
-    "semi": true,
-    "endOfLine": "lf",
+    "bracketSameLine": true,
     "options.editorconfig": true,
+    "astroSkipFrontmatter": true,
     "plugins": [
         "prettier-plugin-astro",
         "prettier-plugin-svelte",
@@ -13,15 +10,9 @@
     ],
     "overrides": [
         {
-            "files": ["*.astro"],
+            "files": ["*.ts", "*.js", "*.mjs", "*.mts"],
             "options": {
-                "parser": "astro"
-            }
-        },
-        {
-            "files": ["*.styl", "*.sass"],
-            "options": {
-                "trailingComma": "all"
+                "singleQuote": true
             }
         }
     ]

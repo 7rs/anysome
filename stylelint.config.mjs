@@ -17,6 +17,7 @@ export default {
   ],
   rules: {
     "stylus/declaration-colon": "always",
+    "declaration-block-trailing-semicolon": "never",
     "stylus/selector-list-comma-newline-after": "always-multi-line",
     "stylus/selector-list-comma": "always",
   },
