@@ -3,17 +3,18 @@
   import StackCard from "./StackCard.svelte";
   import Icon from "@iconify/svelte";
 
-  import type { Stack } from "@scripts/stack-meta.ts";
-
-  export let stackList: [[string, Stack]];
+  import { liveQuery } from "dexie";
+  import { dexieClient, stacksTable } from "@scripts/dexie-setup.ts";
 
   export let isDev: boolean = true;
   export let baseUrl: string = "/";
 
+  $: stacks = liveQuery(() => dexieClient.stacks.toArray());
+
   let pagefind;
   (async () => {
-    const outputPath = isDev ? "dist/" : "";
-    const libPath = `/${outputPath}pagefind/pagefind.js`;
+    const outputPath = isDev ? "/dist" : baseUrl === "/" ? "" : baseUrl;
+    const libPath = `${outputPath}/pagefind/pagefind.js`;
 
     const _pagefind = await import(/* @vite-ignore */ libPath);
     await _pagefind.init();
@@ -66,8 +67,8 @@
       {/await}
     {:else}
       <div class="result-list">
-        {#each stackList as stack}
-          <StackCard href={stack[0]} meta={stack[1]} />
+        {#each $stacks || [] as stack (stack.id)}
+          <StackCard href={stack.url} icon={stack.icon} name={stack.id} description={stack.description} />
         {/each}
       </div>
     {/if}
