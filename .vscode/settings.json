@@ -1,25 +1,33 @@
 {
-    // Editor
     "editor.fontFamily": "'Fira Code', 'HackGen35 Console NFJ', monospace",
     "editor.fontLigatures": true,
     "editor.insertSpaces": true,
-    // Extensions
-    "prettier.configPath": "./.prettierrc",
-    "prettier.ignorePath": "./.prettierignore",
-    "stylelint.customSyntax": "stylelint-stylus/custom-syntax",
-    "stylelint.validate": ["astro"],
-    // File
-    "[astro]": {
-        "editor.tabSize": 2
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[json]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "biomejs.biome"
     },
     "[typescript]": {
-        "editor.tabSize": 2
+        "editor.defaultFormatter": "biomejs.biome"
     },
-    "[stylus]": {
-        "editor.tabSize": 2
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
     },
-    "[json]": {
-        "editor.tabSize": 4
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "biomejs.biome"
     },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "prettier.configPath": "./.prettierrc",
+    "prettier.ignorePath": "./.prettierignore",
+    "stylelint.validate": ["css", "sass", "postcss", "stylus", "styl"],
+    "stylelint.packageManager": "pnpm",
+    "markdownlint.run": "onSave",
     "workbench.editor.enablePreview": false
 }

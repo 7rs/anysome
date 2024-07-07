@@ -1,8 +1,16 @@
 {
     "recommendations": [
+        "editorconfig.editorconfig",
+        "astro-build.astro-vscode",
+        "esbenp.prettier-vscode",
+        "biomejs.biome",
+        "syler.sass-indented",
+        "unifiedjs.vscode-mdx",
+        "svelte.svelte-vscode",
+        "dbaeumer.vscode-eslint",
         "davidanson.vscode-markdownlint",
-        "bierner.markdown-emoji",
-        "usernamehw.errorlens",
-        "editorconfig.editorconfig"
+        "stylelint.vscode-stylelint",
+        "sysoev.language-stylus",
+        "antfu.unocss"
     ]
 }

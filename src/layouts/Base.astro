@@ -1,0 +1,45 @@
+---
+import Header from "@layouts/Header.astro";
+import Footer from "@layouts/Footer.astro";
+
+import "@styles/fonts.sass";
+import "@styles/reset.sass";
+import "@styles/default.sass";
+import "@styles/classes.styl"
+
+export interface Props {
+  title: string;
+  lang?: string;
+  className?: string;
+  hideHeader?: boolean;
+  hideFooter?: boolean;
+}
+
+const { title, lang = "ja", className = "", hideHeader = false, hideFooter = false } = Astro.props;
+---
+
+<html lang={lang}>
+  <head>
+    <title>{title}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+  </head>
+  <body class="min-h-dvh flex flex-col">
+    {
+      !hideHeader && (
+        <slot name="header">
+          <Header />
+        </slot>
+      )
+    }
+    <main class:list={["grow", className]}><slot /></main>
+    {
+      !hideFooter && (
+        <slot name="footer">
+          <Footer />
+        </slot>
+      )
+    }
+  </body>
+</html>

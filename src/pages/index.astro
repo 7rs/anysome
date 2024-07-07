@@ -1,27 +1,18 @@
 ---
-import Landing from "../layouts/Landing.astro";
-import Heading from "../components/Heading.astro";
-import Navigation from "@components/Navigation.astro";
+import Base from "@layouts/Base.astro";
+import SearchBar from "@components/search/SearchBar.svelte";
+import { getCollection } from "astro:content";
 
-const lists = await Astro.glob("./list/*.md");
+const stacks = await getCollection("stack");
 ---
 
-<Landing title="test">
-  <Heading title="Anysome"> Awesome list that included any categories. </Heading>
-  <div data-navigation-list>
-    <Navigation href="https://github.com/7rs/anysome">Source Code</Navigation>
-  </div>
-
-  <div>
-    {lists.map((page) => <a href={page.url}>{page.url}</a>)}
-  </div>
-</Landing>
-
-<style lang="sass">
-  @use "../styles/api.sass" as api
-
-  [data-navigation-list]
-    display: flex
-    justify-content: center
-    column-gap: 1rem
-</style>
+<Base title="Main Page | Anysome" className="bg-slate-200 | sm:px-12 sm:py-12 px-3 py-6">
+  <section>
+    <SearchBar
+      isDev={import.meta.env.DEV}
+      baseUrl="/anysome"
+      client:only="svelte"
+      stackList={stacks.map((stack) => [`/anysome/${stack.slug}`, stack.data])}
+    />
+  </section>
+</Base>

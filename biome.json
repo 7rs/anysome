@@ -1,0 +1,32 @@
+{
+    "formatter": {
+        "indentStyle": "space"
+    },
+    "linter": {
+        "enabled": true
+    },
+    "files": {
+        "ignore": [
+            "*.svelte",
+            "**/node_modules/**",
+            "**/.vscode/**",
+            "**/dist/**"
+        ]
+    },
+    "overrides": [
+        {
+            "include": [".prettierrc", "*.json"],
+            "formatter": {
+                "indentWidth": 4
+            }
+        },
+        {
+            "include": ["*.jsonc", "*.json"],
+            "json": {
+                "parser": {
+                    "allowComments": true
+                }
+            }
+        }
+    ]
+}

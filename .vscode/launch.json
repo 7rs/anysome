@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // English: https://docs.astro.build/en/reference/cli-reference
+        // 日本語:   https://docs.astro.build/ja/reference/cli-reference
+        {
+            "name": "Launch development server",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "pnpm dev"
+        },
+        {
+            "name": "Build website",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "pnpm build"
+        },
+        {
+            "name": "Preview website",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "pnpm preview"
+        }
+    ]
+}

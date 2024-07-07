@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+import Link from "@components/Link.astro";
+
+export interface Props {
+  name: string;
+  icon?: string;
+  href?: string;
+}
+
+const { name, icon, href, ...props } = Astro.props;
+---
+
+<Link href={href} title={name} {...props}>
+  <article {...props} data-card>
+    {icon && <Icon name={icon} />}
+    <p class="text-4xl" data-card-name>{name}</p>
+    <p class="text-lg" data-card-description><slot /></p>
+  </article>
+</Link>
+
+<style lang="stylus">
+  [data-card]
+    display grid
+    grid-template-areas \
+      "icon name" \
+      "icon description"
+    grid-template-columns 3rem 1fr
+    grid-template-rows 1fr 0.5fr
+    gap 0.5rem
+
+  [data-icon]
+    grid-area icon
+    font-size 3rem
+    justify-self center
+    align-self center
+
+  [data-card-name]
+    grid-area name
+    font-weight 700
+
+  [data-card-description]
+    grid-area description
+</style>

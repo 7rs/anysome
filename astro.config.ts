@@ -1,21 +1,22 @@
 import { defineConfig } from "astro/config";
+import path from "node:path";
 
-// import path from "path";
-// import path from 'node:path'
+import icon from "astro-icon";
 
+import UnoCSS from "unocss/astro";
+import mdx from "@astrojs/mdx";
+import svelte from "@astrojs/svelte";
+
+// https://astro.build/config
 export default defineConfig({
-  // vite: {
-  //   css: {
-  //     preprocessorOptions: {
-  //       sass: {
-  //         additionalData: '\n@use "@/styles/api.sass" as api\n',
-  //       },
-  //     },
-  //   },
-  //   resolve: {
-  //     alias: {
-  //       "@": path.resolve(__dirname, "src"),
-  //     },
-  //   },
-  // },
+  site: "https://7rs.github.io",
+  base: "/anysome",
+  integrations: [icon(), UnoCSS(), mdx(), svelte()],
+  vite: {
+    resolve: {
+      alias: {
+        "@scripts": path.resolve("./scripts"),
+      },
+    },
+  },
 });
