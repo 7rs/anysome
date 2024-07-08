@@ -11,3 +11,12 @@ export const Stack = z.object({
   url: z.ostring(),
 });
 export type Stack = z.infer<typeof Stack>;
+
+// For dexie
+export interface Stacks {
+  id: number;
+  name: string;
+  description?: string;
+  icon?: string;
+  url: string;
+}

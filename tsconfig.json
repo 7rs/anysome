@@ -8,6 +8,7 @@
         "allowJs": true,
         "declaration": true,
         "emitDeclarationOnly": true,
+        "resolveJsonModule": true,
         "baseUrl": ".",
         "outDir": "dist/",
         "allowImportingTsExtensions": true,

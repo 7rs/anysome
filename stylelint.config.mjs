@@ -2,23 +2,22 @@
 
 export default {
   extends: [
-    "stylelint-config-html",
-    "stylelint-config-html/svelte",
-    "stylelint-config-html/astro",
-    "stylelint-stylus/standard",
-    "stylelint-config-sass-guidelines",
+    'stylelint-config-html',
+    'stylelint-config-html/svelte',
+    'stylelint-config-html/astro',
+    'stylelint-stylus/standard',
+    'stylelint-config-sass-guidelines',
   ],
-  customSyntax: "postcss-html",
+  customSyntax: 'postcss-html',
   overrides: [
     {
-      files: ["*.styl", "**/*.styl"],
-      customSyntax: "postcss-styl",
+      files: ['*.styl', '**/*.styl'],
+      customSyntax: 'postcss-styl',
     },
   ],
   rules: {
-    "stylus/declaration-colon": "always",
-    "declaration-block-trailing-semicolon": "never",
-    "stylus/selector-list-comma-newline-after": "always-multi-line",
-    "stylus/selector-list-comma": "always",
+    'stylus/declaration-colon': 'always',
+    'stylus/selector-list-comma-newline-after': 'always-multi-line',
+    'stylus/selector-list-comma': 'always'
   },
 };

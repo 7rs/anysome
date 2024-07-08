@@ -1,7 +1,10 @@
 ---
-import { Stack } from "../../scripts/stack-meta";
+import { Stack } from "@scripts/stack-meta.ts";
 
-import { Icon } from "astro-icon/components";
+import Heading from "@components/details/Heading.astro";
+import StackIcon from "@components/details/StackIcon.astro";
+import Tag from "@components/details/Tag.astro";
+import LabeledIcon from "@components/details/LabeledIcon.astro";
 
 export interface Props {
   frontmatter: Stack;
@@ -9,49 +12,42 @@ export interface Props {
 
 const { frontmatter } = Astro.props;
 
-const parsedFormatter = Stack.parse(frontmatter);
+const parsedFrontmatter = Stack.parse(frontmatter);
 
 import Base from "@layouts/Base.astro";
 ---
 
-<Base title={`${parsedFormatter.name} | Anysome`}>
-  <header>
+<Base className="flex flex-col gap-12" title={`${parsedFrontmatter.name} | Anysome`}>
+  <header class="flex flex-col gap-6 justify-center">
     <section>
-      {parsedFormatter.icon && <Icon data-pagefind-meta="icon[data-icon]" name={parsedFormatter.icon} />}
-      <hgroup>
-        <h1 data-pagefind-meta="name">{parsedFormatter.name}</h1>
-        <p data-pagefind-meta="description">{parsedFormatter.description}</p>
-      </hgroup>
+      {parsedFrontmatter.icon && <StackIcon icon={parsedFrontmatter.icon} />}
+      <Heading title={parsedFrontmatter.name}>{parsedFrontmatter.description}</Heading>
     </section>
     <section>
-      <div>
-        {
-          parsedFormatter.tags.map((tag) => {
-            <a href="/" data-pagefind-meta="tag">
-              {tag}
-            </a>;
-          })
-        }
+      <div class="flex justify-center gap-4 flex-wrap">
+        {parsedFrontmatter.tags.map((tag) => <Tag href={`${import.meta.env.BASE_URL}?q=${tag}`}>{tag}</Tag>)}
       </div>
     </section>
     <section>
-      <div>
+      <div class="flex gap-6 justify-center">
+        <LabeledIcon href={parsedFrontmatter.website} icon="mdi:web" data-pagefind-meta="website">
+          Website
+        </LabeledIcon>
         {
-          parsedFormatter.website && (
-            <a href="/" data-pagefind-meta="website">
-              {parsedFormatter.website}
-            </a>
-          )
-        }
-        {
-          parsedFormatter.repository && (
-            <a href="/" data-pagefind-meta="repository">
-              {parsedFormatter.repository}
-            </a>
+          parsedFrontmatter.repository?.startsWith("https://github") ? (
+            <LabeledIcon href={parsedFrontmatter.repository} icon="simple-icons:github" data-pagefind-meta="repository">
+              GitHub
+            </LabeledIcon>
+          ) : (
+            <LabeledIcon href={parsedFrontmatter.repository} icon="simple-icons:gitlab" data-pagefind-meta="repository">
+              GitLab
+            </LabeledIcon>
           )
         }
       </div>
     </section>
   </header>
-  <slot />
+  <section>
+    <slot />
+  </section>
 </Base>

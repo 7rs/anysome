@@ -3,16 +3,27 @@ import Base from "@layouts/Base.astro";
 import SearchBar from "@components/search/SearchBar.svelte";
 import { getCollection } from "astro:content";
 
+import { stacksTable, schemaName } from "@scripts/dexie-setup.ts";
+
 const stacks = await getCollection("stack");
+const stacksColumns = stacks.map((stack, index) => { return {
+    id: index,
+    name: stack.data.name,
+    description: stack.data.description,
+    icon: stack.data.icon,
+    url: `${import.meta.env.BASE_URL}/${stack.slug}` 
+}})
 ---
+
+<script src="https://unpkg.com/dexie/dist/dexie.js" is:inline></script>
+<script is:inline define:vars={{ schemaName, stacksTable, stacksColumns }}>
+  const dexieClient = new Dexie(schemaName);
+  dexieClient.version(1).stores({ stacks: stacksTable });
+  dexieClient.stacks.bulkPut(stacksColumns);
+</script>
 
 <Base title="Main Page | Anysome" className="bg-slate-200 | sm:px-12 sm:py-12 px-3 py-6">
   <section>
-    <SearchBar
-      isDev={import.meta.env.DEV}
-      baseUrl="/anysome"
-      client:only="svelte"
-      stackList={stacks.map((stack) => [`/anysome/${stack.slug}`, stack.data])}
-    />
+    <SearchBar isDev={import.meta.env.DEV} baseUrl={import.meta.env.BASE_URL} client:only="svelte" />
   </section>
 </Base>
