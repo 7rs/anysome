@@ -5,15 +5,13 @@ import { getCollection } from "astro:content";
 
 import { stacksTable, schemaName } from "@scripts/dexie-setup.ts";
 
-const baseUrl = "/anysome"
-
 const stacks = await getCollection("stack");
 const stacksColumns = stacks.map((stack, index) => { return {
     id: index,
     name: stack.data.name,
     description: stack.data.description,
     icon: stack.data.icon,
-    url: `${baseUrl}/${stack.slug}` 
+    url: `${import.meta.env.BASE_URL}/${stack.slug}` 
 }})
 ---
 
@@ -26,6 +24,6 @@ const stacksColumns = stacks.map((stack, index) => { return {
 
 <Base title="Main Page | Anysome" className="bg-slate-200 | sm:px-12 sm:py-12 px-3 py-6">
   <section>
-    <SearchBar isDev={import.meta.env.DEV} baseUrl={baseUrl} client:only="svelte" />
+    <SearchBar isDev={import.meta.env.DEV} baseUrl={import.meta.env.BASE_URL} client:only="svelte" />
   </section>
 </Base>

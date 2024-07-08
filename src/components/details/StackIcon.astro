@@ -1,0 +1,17 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  icon: string;
+}
+const {icon} = Astro.props;
+---
+
+{
+  icon &&
+    (icon.startsWith("url:") ? (
+      <img class="block my-6 mx-auto h-40 w-auto" src={icon.slice(4)} alt="icon" />
+    ) : (
+      <Icon class="block  my-6 mx-auto h-40 w-auto" name={icon} />
+    ))
+}

@@ -4,7 +4,7 @@
   import Icon from "@iconify/svelte";
 
   import { liveQuery } from "dexie";
-  import { dexieClient, stacksTable } from "@scripts/dexie-setup.ts";
+  import { dexieClient } from "@scripts/dexie-setup.ts";
 
   export let isDev: boolean = true;
   export let baseUrl: string = "/";
