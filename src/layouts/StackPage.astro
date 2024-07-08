@@ -9,24 +9,31 @@ export interface Props {
 
 const { frontmatter } = Astro.props;
 
-const parsedFormatter = Stack.parse(frontmatter);
+const parsedFrontmatter = Stack.parse(frontmatter);
 
 import Base from "@layouts/Base.astro";
 ---
 
-<Base title={`${parsedFormatter.name} | Anysome`}>
+<Base title={`${parsedFrontmatter.name} | Anysome`}>
   <header>
     <section>
-      {parsedFormatter.icon && <Icon data-pagefind-meta="icon[data-icon]" name={parsedFormatter.icon} />}
+      {
+        parsedFrontmatter.icon &&
+          (parsedFrontmatter.icon.startsWith("url:") ? (
+            <img class="stack-card-icon" src={parsedFrontmatter.icon.slice(4)} alt="icon" />
+          ) : (
+            <Icon name={parsedFrontmatter.icon} />
+          ))
+      }
       <hgroup>
-        <h1 data-pagefind-meta="name">{parsedFormatter.name}</h1>
-        <p data-pagefind-meta="description">{parsedFormatter.description}</p>
+        <h1 data-pagefind-meta="name">{parsedFrontmatter.name}</h1>
+        <p data-pagefind-meta="description">{parsedFrontmatter.description}</p>
       </hgroup>
     </section>
     <section>
       <div>
         {
-          parsedFormatter.tags.map((tag) => {
+          parsedFrontmatter.tags.map((tag) => {
             <a href="/" data-pagefind-meta="tag">
               {tag}
             </a>;
@@ -37,16 +44,16 @@ import Base from "@layouts/Base.astro";
     <section>
       <div>
         {
-          parsedFormatter.website && (
+          parsedFrontmatter.website && (
             <a href="/" data-pagefind-meta="website">
-              {parsedFormatter.website}
+              {parsedFrontmatter.website}
             </a>
           )
         }
         {
-          parsedFormatter.repository && (
+          parsedFrontmatter.repository && (
             <a href="/" data-pagefind-meta="repository">
-              {parsedFormatter.repository}
+              {parsedFrontmatter.repository}
             </a>
           )
         }

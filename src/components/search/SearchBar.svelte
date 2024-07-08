@@ -68,7 +68,7 @@
     {:else}
       <div class="result-list">
         {#each $stacks || [] as stack (stack.id)}
-          <StackCard href={stack.url} icon={stack.icon} name={stack.id} description={stack.description} />
+          <StackCard href={stack.url} icon={stack.icon} name={stack.name} description={stack.description} />
         {/each}
       </div>
     {/if}

@@ -5,17 +5,20 @@ import { getCollection } from "astro:content";
 
 import { stacksTable, schemaName } from "@scripts/dexie-setup.ts";
 
+const baseUrl = "/anysome"
+
 const stacks = await getCollection("stack");
-const stacksColumns = stacks.map((stack) => { return {
-    id: stack.data.name,
+const stacksColumns = stacks.map((stack, index) => { return {
+    id: index,
+    name: stack.data.name,
     description: stack.data.description,
     icon: stack.data.icon,
-    url: `/anysome/${stack.slug}` 
+    url: `${baseUrl}/${stack.slug}` 
 }})
 ---
 
 <script src="https://unpkg.com/dexie/dist/dexie.js" is:inline></script>
-<script is:inline define:vars={{schemaName, stacksTable, stacksColumns}}>
+<script is:inline define:vars={{ schemaName, stacksTable, stacksColumns }}>
   const dexieClient = new Dexie(schemaName);
   dexieClient.version(1).stores({ stacks: stacksTable });
   dexieClient.stacks.bulkPut(stacksColumns);
@@ -23,10 +26,6 @@ const stacksColumns = stacks.map((stack) => { return {
 
 <Base title="Main Page | Anysome" className="bg-slate-200 | sm:px-12 sm:py-12 px-3 py-6">
   <section>
-    <SearchBar
-      isDev={import.meta.env.DEV}
-      baseUrl="/anysome"
-      client:only="svelte"
-    />
+    <SearchBar isDev={import.meta.env.DEV} baseUrl={baseUrl} client:only="svelte" />
   </section>
 </Base>

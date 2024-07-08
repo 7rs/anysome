@@ -20,6 +20,6 @@
       <Icon class="stack-card-icon" icon={icon} />
     {/if}
     <p class="stack-card-name">{name}</p>
-    <p class="stack-card-description">{description}</p>
+    <p class="stack-card-description">{description}</p> 
   </article>
 </a>

@@ -4,7 +4,7 @@ import type { EntityTable } from 'dexie';
 import type { Stacks } from './stack-meta.ts';
 
 export const schemaName = 'anysomeMain';
-export const stacksTable = ['id', 'description', 'icon', 'url'].join(',');
+export const stacksTable = ['id', 'name', 'description', 'icon', 'url'].join(',');
 
 export const dexieClient = new Dexie(schemaName) as Dexie & {
   stacks: EntityTable<Stacks>;

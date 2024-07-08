@@ -14,8 +14,9 @@ export type Stack = z.infer<typeof Stack>;
 
 // For dexie
 export interface Stacks {
-  id: string;
-  description: string;
-  icon: string;
+  id: number;
+  name: string;
+  description?: string;
+  icon?: string;
   url: string;
 }
