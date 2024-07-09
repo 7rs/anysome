@@ -11,9 +11,15 @@ const stacksColumns = stacks.map((stack, index) => { return {
     name: stack.data.name,
     description: stack.data.description,
     icon: stack.data.icon,
-    url: `${import.meta.env.BASE_URL}/${stack.slug}` 
+    url: `/${stack.slug}`
 }})
 ---
+
+<Base title="Main Page | Anysome" className="bg-slate-200 | sm:px-12 sm:py-12 px-3 py-6">
+  <section>
+    <SearchBar isDev={import.meta.env.DEV} client:only="svelte" />
+  </section>
+</Base>
 
 <script src="https://unpkg.com/dexie/dist/dexie.js" is:inline></script>
 <script is:inline define:vars={{ schemaName, stacksTable, stacksColumns }}>
@@ -21,9 +27,3 @@ const stacksColumns = stacks.map((stack, index) => { return {
   dexieClient.version(1).stores({ stacks: stacksTable });
   dexieClient.stacks.bulkPut(stacksColumns);
 </script>
-
-<Base title="Main Page | Anysome" className="bg-slate-200 | sm:px-12 sm:py-12 px-3 py-6">
-  <section>
-    <SearchBar isDev={import.meta.env.DEV} baseUrl={import.meta.env.BASE_URL} client:only="svelte" />
-  </section>
-</Base>

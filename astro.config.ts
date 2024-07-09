@@ -20,8 +20,7 @@ for (const [alias, targetPath] of Object.entries(tsconfig.compilerOptions.paths)
 // https://docs.astro.build/ja/reference/configuration-reference/
 // https://docs.astro.build/en/reference/configuration-reference/
 export default defineConfig({
-  site: 'https://7rs.github.io',
-  base: '/anysome',
+  site: 'https://anyso.me',
   markdown: { gfm: false },
   integrations: [svelte(), mdx(), UnoCSS(), icon(), purgecss()],
   vite: {
