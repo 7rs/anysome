@@ -9,8 +9,6 @@
   export let isDev: boolean = true;
   export let baseUrl: string = "/";
 
-  $: stacks = liveQuery(() => dexieClient.stacks.toArray());
-
   let pagefind;
   (async () => {
     const outputPath = isDev ? "/dist" : baseUrl === "/" ? "" : baseUrl;
@@ -44,6 +42,8 @@
 
     return await Promise.all(searchResult.results.map((result) => result.data()));
   }
+
+  $: stacks = liveQuery(() => dexieClient.stacks.toArray());
 </script>
 
 <article class="anysome-app">
@@ -68,8 +68,8 @@
     {:else}
       <div class="result-list">
         {#each $stacks || [] as stack (stack.id)}
-          <StackCard href={stack.url} icon={stack.icon} name={stack.name} description={stack.description} />
-        {/each}
+            <StackCard href={stack.url} icon={stack.icon} name={stack.name} description={stack.description} />
+          {/each}
       </div>
     {/if}
   {/key}

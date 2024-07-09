@@ -1,18 +1,27 @@
 ---
-import Base from "@layouts/Base.astro";
-import SearchBar from "@components/search/SearchBar.svelte";
+import fs from "node:fs";
+import path from "node:path";
 import { getCollection } from "astro:content";
 
+import Base from "@layouts/Base.astro";
+import SearchBar from "@components/search/SearchBar.svelte";
 import { stacksTable, schemaName } from "@scripts/dexie-setup.ts";
 
-const stacks = await getCollection("stack");
-const stacksColumns = stacks.map((stack, index) => { return {
+const stacksColumns = (await getCollection("stack")).map((stack, index) => {
+  return {
     id: index,
     name: stack.data.name,
     description: stack.data.description,
     icon: stack.data.icon,
-    url: `/${stack.slug}`
-}})
+    url: `/${stack.slug}`,
+  };
+});
+const disest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(JSON.stringify(stacksColumns)));
+const stackHash = [...new Uint8Array(disest)].map((x) => x.toString(16).padStart(2, "0")).join("");
+
+fs.writeFile(path.resolve("public/stacks.json"), JSON.stringify({ stackList: stacksColumns }), (err) => {
+  err && console.error(err);
+});
 ---
 
 <Base title="Main Page | Anysome" className="bg-slate-200 | sm:px-12 sm:py-12 px-3 py-6">
@@ -21,9 +30,42 @@ const stacksColumns = stacks.map((stack, index) => { return {
   </section>
 </Base>
 
-<script src="https://unpkg.com/dexie/dist/dexie.js" is:inline></script>
-<script is:inline define:vars={{ schemaName, stacksTable, stacksColumns }}>
-  const dexieClient = new Dexie(schemaName);
-  dexieClient.version(1).stores({ stacks: stacksTable });
-  dexieClient.stacks.bulkPut(stacksColumns);
+<script async type="module" is:inline define:vars={{ schemaName, stacksTable, stackHash }}>
+  /**
+   * @argument {string} url
+   */
+  async function getStackList(url) {
+    const stackJson = await fetch(url)
+      .then((res) => res.json())
+      .catch((err) => console.log(err));
+
+    return stackJson["stackList"];
+  }
+
+  /**
+   * @argument {string} url
+   */
+  async function updateDB(url) {
+    await import("https://unpkg.com/dexie/dist/dexie.js");
+
+    const dexieClient = new Dexie(schemaName);
+
+    dexieClient.version(1).stores({ stacks: stacksTable });
+    dexieClient.stacks.bulkPut(await getStackList(url));
+  }
+
+  const localStackHash = localStorage.getItem("stackHash");
+  if (localStackHash !== stackHash) {
+    console.info(`Updating: ${localStackHash} -> ${stackHash}`);
+
+    try {
+      await updateDB("/stacks.json");
+      console.info(`Updated: ${localStackHash} -> ${stackHash}`);
+      localStorage.setItem("stackHash", stackHash);
+    } catch (err) {
+      console.err(`Failed updating: ${err}`);
+    }
+  } else {
+    console.info(`Already updated: ${stackHash}`);
+  }
 </script>
