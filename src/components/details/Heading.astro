@@ -1,0 +1,54 @@
+---
+export interface Props {
+  title: string;
+  headerSize?: number;
+}
+
+const { title, headerSize = 1 } = Astro.props;
+---
+
+<hgroup class="flex flex-col gap-4">
+  {
+    () => {
+      switch (headerSize) {
+        case 2:
+          return (
+            <h2 class="text-4xl" data-pagefind-meta="name">
+              {title}
+            </h2>
+          );
+        case 3:
+          return (
+            <h3 class="text-3xl" data-pagefind-meta="name">
+              {title}
+            </h3>
+          );
+        case 4:
+          return (
+            <h4 class="text-2xl" data-pagefind-meta="name">
+              {title}
+            </h4>
+          );
+        case 5:
+          return (
+            <h5 class="text-xl" data-pagefind-meta="name">
+              {title}
+            </h5>
+          );
+        case 6:
+          return (
+            <h6 class="text-lg" data-pagefind-meta="name">
+              {title}
+            </h6>
+          );
+        default:
+          return (
+            <h1 class="text-5xl" data-pagefind-meta="name">
+              {title}
+            </h1>
+          );
+      }
+    }
+  }
+  <p class="text-base" data-pagefind-meta="description"><slot /></p>
+</hgroup>

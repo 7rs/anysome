@@ -1,0 +1,57 @@
+---
+import { Stack } from "@scripts/stack-meta.ts";
+
+import Heading from "@components/details/Heading.astro";
+import StackIcon from "@components/details/StackIcon.astro";
+import Tag from "@components/details/Tag.astro";
+import LabeledIcon from "@components/details/LabeledIcon.astro";
+
+export interface Props {
+  frontmatter: Stack;
+}
+
+const { frontmatter } = Astro.props;
+
+const parsedFrontmatter = Stack.parse(frontmatter);
+
+import Base from "@layouts/Base.astro";
+---
+
+<Base className="flex flex-col gap-12" title={`${parsedFrontmatter.name} | Anysome`}>
+  <header class="flex flex-col gap-6 justify-center">
+    <section>
+      {parsedFrontmatter.icon && <StackIcon icon={parsedFrontmatter.icon} />}
+      <Heading title={parsedFrontmatter.name}>{parsedFrontmatter.description}</Heading>
+    </section>
+    <section>
+      <div class="flex justify-center gap-4 flex-wrap">
+        {parsedFrontmatter.tags.map((tag) => <Tag href={`?q=${tag}`}>{tag}</Tag>)}
+      </div>
+    </section>
+    <section>
+      <div class="flex gap-6 justify-center">
+        {
+          parsedFrontmatter.website && (
+            <LabeledIcon href={parsedFrontmatter.website} icon="mdi:web" data-pagefind-meta="website">
+              Website
+            </LabeledIcon>
+          )
+        }
+        {
+          parsedFrontmatter.repository?.startsWith("https://github") ? (
+            <LabeledIcon href={parsedFrontmatter.repository} icon="simple-icons:github" data-pagefind-meta="repository">
+              GitHub
+            </LabeledIcon>
+          ) : (
+            <LabeledIcon href={parsedFrontmatter.repository} icon="simple-icons:gitlab" data-pagefind-meta="repository">
+              GitLab
+            </LabeledIcon>
+          )
+        }
+      </div>
+    </section>
+  </header>
+  <section>
+    <slot />
+  </section>
+</Base>

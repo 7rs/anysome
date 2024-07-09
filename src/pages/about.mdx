@@ -1,0 +1,107 @@
+---
+
+---
+import Base from "@layouts/Base.astro";
+
+<Base title="Main Page | Anysome" className="flex flex-col gap-12" hideHeader hideFooter>
+  <hgroup>
+    # Anysome
+
+      あらゆるジャンルを含むAwesomeリスト
+  </hgroup>
+
+  <section>
+    <h2>特徴</h2>
+    <div class="flex">
+
+      <article>
+        ### 解説ページ
+
+          Anysomeにはスタックの詳細を明確にするためにスタックごとにページがあります。
+          そうすれば逆引きしやすくなりますし、閲覧者が追加で情報収集する手間が減ります。
+      </article>
+
+      <article>
+        ### 検索
+
+          Anysomeは複合的な検索や全く別の方向からの検索に対応しています。
+          これは、あいまいな立ち位置なツールが存在したり、関係性をはっきりさせるためです。
+          検索にバックエンドの実装は無いですが、PagefindはRustで記述されているためCSRでも高速です。
+      </article>
+
+      <article>
+        ### 見やすい
+
+          Anysomeには広告も寄付の催促もありません。
+          a11yの向上に取り組んでおり、無駄なものを省いて必要なものだけを画面に表示します。
+          これは、閲覧者への負担を減らし、集中力を向上させるためです。
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>貢献</h2>
+    <div class="flex">
+
+      <article>
+        ### FLOSS
+
+          Anysomeは完全にオープンソースであり、自由です。
+          あなたの好きなようにAnysomeを利用すれば良いのです。
+      </article>
+
+      <article>
+        ### 低い学習コスト
+
+          AnysomeはAstro, Svelte, UnoCSS, SASS, Stylusなどを使っていますが、
+          AstroとSvelteは基本的な構文が似ており、SASSとStylusは構文に一部の互換性があります。
+          UnoCSSはTailwindとほとんど互換性があります。
+          どれもがシンプルな構文を持っており、Anysomeに簡単に触れます。
+      </article>
+
+      <article>
+        ### 誰でも参加できる
+
+          Anysomeは完全にオープンソースであり、自由です。
+          提案はIssue, 修正はPR, 相談や質問はDiscordかDiscussionを使用します。
+          あなたのアイデアをぜひ教えてください。
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>理念</h2>
+    <div class="flex">
+
+      <article>
+        ### 厳格
+
+          Anysomeには、基本的に新しい技術が入っていることが多いです。
+          例えるなら、jQueryを否定するつもりはありませんが、少なくともモダンな候補ではないです。
+          そういったものをAnysomeは掲載しません。
+          ただし、Anysomeが注目するのは将来性であり、新しくあれば良いということではありません。
+          確固たるメリットや利点があって、メンテナンスされているのかということも重要です。
+      </article>
+
+      <article>
+        ### 検閲なし
+
+          Anysomeはツールの種類や用途について問いません。
+          当然ながら堂々とした違法ツールは除外するものの、確定しないものは要請がない限り残します。
+          つまり、リストから削除するには納得のいく理由が必要なのです。
+      </article>
+
+      <article>
+        ### 楽しく、ルーズに
+
+          Anysomeでは厳しいルールはありません。
+          言葉遣いだとか、作法とかそんなものはどうでも良いです。
+          ツールを使って、効率よく開発し、
+          リファレンスやドキュメントなどの根拠を引っ張ってきて、それとなくベストプラクティスを目指します。
+      </article>
+
+    </div>
+  </section>
+</Base>

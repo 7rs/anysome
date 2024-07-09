@@ -1,18 +1,13 @@
-
 {
     "printWidth": 120,
-    "useTabs": false,
-    "tabWidth": 2,
-    "singleQuote": false,
-    "semi": true,
-    "endOfLine": "lf",
+    "bracketSameLine": true,
     "options.editorconfig": true,
+    "plugins": ["prettier-plugin-astro", "prettier-plugin-svelte", "prettier-plugin-stylus"],
     "overrides": [
         {
-            "files": [".prettierrc", "*.json"],
+            "files": ["*.ts", "*.js", "*.mjs", "*.mts"],
             "options": {
-                "parser": "json",
-                "tabWidth": 4
+                "singleQuote": true
             }
         }
     ]
