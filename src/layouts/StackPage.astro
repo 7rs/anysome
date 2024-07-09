@@ -25,14 +25,18 @@ import Base from "@layouts/Base.astro";
     </section>
     <section>
       <div class="flex justify-center gap-4 flex-wrap">
-        {parsedFrontmatter.tags.map((tag) => <Tag href={`${import.meta.env.BASE_URL}?q=${tag}`}>{tag}</Tag>)}
+        {parsedFrontmatter.tags.map((tag) => <Tag href={`?q=${tag}`}>{tag}</Tag>)}
       </div>
     </section>
     <section>
       <div class="flex gap-6 justify-center">
-        <LabeledIcon href={parsedFrontmatter.website} icon="mdi:web" data-pagefind-meta="website">
-          Website
-        </LabeledIcon>
+        {
+          parsedFrontmatter.website && (
+            <LabeledIcon href={parsedFrontmatter.website} icon="mdi:web" data-pagefind-meta="website">
+              Website
+            </LabeledIcon>
+          )
+        }
         {
           parsedFrontmatter.repository?.startsWith("https://github") ? (
             <LabeledIcon href={parsedFrontmatter.repository} icon="simple-icons:github" data-pagefind-meta="repository">
