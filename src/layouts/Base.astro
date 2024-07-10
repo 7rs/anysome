@@ -15,7 +15,7 @@ export interface Props {
   hideFooter?: boolean;
 }
 
-const { title, lang = "ja", className = "", hideHeader = false, hideFooter = false } = Astro.props;
+const { title, lang = "ja", className = "", hideHeader = false, hideFooter = false, ...props } = Astro.props;
 ---
 
 <html lang={lang}>
@@ -33,7 +33,7 @@ const { title, lang = "ja", className = "", hideHeader = false, hideFooter = fal
         </slot>
       )
     }
-    <main class:list={["grow", className]}><slot /></main>
+    <main class:list={["grow", className]} {...props}><slot /></main>
     {
       !hideFooter && (
         <slot name="footer">
