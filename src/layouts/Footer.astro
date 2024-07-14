@@ -1,13 +1,15 @@
 ---
 import { Icon } from "astro-icon/components";
-
 import Link from "@components/Link.astro";
+import IconFlex from "@components/IconFlex.astro";
+
+const {...props} = Astro.props;
 ---
 
-<footer class="static-bar">
-  <p class="text-2xl">Published under CC0 1.0</p>
-  <div class="menu-icons">
+<footer class="static-bar" {...props}>
+  <p>Published under CC0 1.0</p>
+  <IconFlex>
     <Link href="https://github.com/7rs/anysome"><Icon name="line-md:github-loop" /></Link>
     <Link href="https://7rs.dev/d"><Icon name="line-md:discord" /></Link>
-  </div>
+  </IconFlex>
 </footer>

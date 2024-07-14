@@ -11,6 +11,7 @@ import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 import compressor from 'astro-compressor';
 import expressiveCode from 'astro-expressive-code';
+
 let aliasesArray: {
   [key: string]: string;
 } = {};

@@ -1,0 +1,21 @@
+---
+export interface Props {
+  requireNav?: boolean;
+}
+
+const { requireNav = false } = Astro.props;
+
+const className = "flex gap-6";
+---
+
+{
+  requireNav ? (
+    <nav class={className}>
+      <slot />
+    </nav>
+  ) : (
+    <div class={className}>
+      <slot />
+    </div>
+  )
+}

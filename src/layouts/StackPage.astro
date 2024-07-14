@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
 const parsedFrontmatter = Stack.parse(frontmatter);
 
 import Base from "@layouts/Base.astro";
-import "@styles/stack-page.sass"
+import "@styles/stack-page.styl"
 ---
 
 <Base className="flex flex-col gap-12 justify-center items-center" title={`${parsedFrontmatter.name} | Anysome`}>

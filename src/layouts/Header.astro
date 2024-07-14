@@ -1,14 +1,16 @@
 ---
 import { Icon } from "astro-icon/components";
-
 import Link from "@components/Link.astro";
+import IconFlex from "@components/IconFlex.astro";
+
+const {...props} = Astro.props;
 ---
 
-<header class="static-bar">
+<header class="static-bar" {...props}>
   <p>ANYSOME</p>
-  <nav class="menu-icons">
+  <IconFlex requireNav>
     <Link href="/"><Icon name="line-md:search" /></Link>
     <Link href="/about"><Icon name="line-md:question-circle" /></Link>
     <Icon name="line-md:sunny-filled-loop" />
-  </nav>
+  </IconFlex>
 </header>
