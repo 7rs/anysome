@@ -30,7 +30,7 @@ importers:
         specifier: ^5.0.20
         version: 5.0.20
       '@iconify-json/devicon':
-        specifier: ^1.1.45
+        specifier: ^1.1.47
         version: 1.1.47
       '@iconify-json/line-md':
         specifier: ^1.1.38
@@ -42,7 +42,7 @@ importers:
         specifier: ^1.1.67
         version: 1.1.67
       '@iconify-json/simple-icons':
-        specifier: ^1.1.108
+        specifier: ^1.1.109
         version: 1.1.109
       '@playform/compress':
         specifier: ^0.0.13
@@ -69,7 +69,7 @@ importers:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.39)
       dexie:
-        specifier: ^4.0.7
+        specifier: ^4.0.8
         version: 4.0.8
       giscus:
         specifier: ^1.5.0
@@ -78,7 +78,7 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       postcss-preset-env:
-        specifier: ^9.5.14
+        specifier: ^9.6.0
         version: 9.6.0(postcss@8.4.39)
       purgecss:
         specifier: ^6.0.0
@@ -87,14 +87,14 @@ importers:
         specifier: ^4.2.18
         version: 4.2.18
       unocss:
-        specifier: ^0.61.0
+        specifier: ^0.61.3
         version: 0.61.3(postcss@8.4.39)(rollup@4.18.1)(vite@5.3.3(@types/node@20.14.10)(lightningcss@1.25.1)(sass@1.77.8)(stylus@0.63.0)(terser@5.31.1))
     devDependencies:
       '@biomejs/biome':
         specifier: 1.8.2
         version: 1.8.2
       '@eslint/js':
-        specifier: ^9.5.0
+        specifier: ^9.7.0
         version: 9.7.0
       '@iconify/svelte':
         specifier: ^4.0.2
@@ -106,25 +106,25 @@ importers:
         specifier: ^8.42.3
         version: 8.42.3
       '@types/node':
-        specifier: ^20.14.8
+        specifier: ^20.14.10
         version: 20.14.10
       '@unocss/preset-uno':
-        specifier: ^0.61.0
+        specifier: ^0.61.3
         version: 0.61.3
       eslint-plugin-astro:
-        specifier: ^1.2.2
+        specifier: ^1.2.3
         version: 1.2.3(eslint@8.57.0)(typescript@5.5.3)
       eslint-plugin-jsx-a11y:
         specifier: ^6.9.0
         version: 6.9.0(eslint@8.57.0)
       eslint-plugin-svelte:
-        specifier: ^2.41.0
+        specifier: ^2.42.0
         version: 2.42.0(eslint@8.57.0)(svelte@4.2.18)
       lefthook:
-        specifier: ^1.6.18
+        specifier: ^1.7.2
         version: 1.7.2
       playwright:
-        specifier: ^1.45.0
+        specifier: ^1.45.1
         version: 1.45.1
       postcss:
         specifier: ^8.4.39
@@ -136,7 +136,7 @@ importers:
         specifier: ^4.0.9
         version: 4.0.9(postcss@8.4.39)
       prettier:
-        specifier: ^3.3.2
+        specifier: ^3.3.3
         version: 3.3.3
       prettier-plugin-astro:
         specifier: ^0.14.0
@@ -148,10 +148,10 @@ importers:
         specifier: ^3.2.5
         version: 3.2.5(prettier@3.3.3)(svelte@4.2.18)
       sass:
-        specifier: ^1.77.6
+        specifier: ^1.77.8
         version: 1.77.8
       stylelint:
-        specifier: ^16.6.1
+        specifier: ^16.7.0
         version: 16.7.0(typescript@5.5.3)
       stylelint-config-html:
         specifier: ^1.1.0
@@ -166,10 +166,10 @@ importers:
         specifier: ^0.63.0
         version: 0.63.0
       typescript:
-        specifier: ^5.5.2
+        specifier: ^5.5.3
         version: 5.5.3
       typescript-eslint:
-        specifier: ^7.14.1
+        specifier: ^7.16.0
         version: 7.16.0(eslint@8.57.0)(typescript@5.5.3)
       vitest:
         specifier: ^1.6.0

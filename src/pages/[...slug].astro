@@ -2,18 +2,12 @@
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const pages = await getCollection("stack");
-
-  const paths = pages.map((page) => {
+  return (await getCollection("stack")).map((page) => {
     return { params: { slug: page.slug }, props: page };
   });
-
-  return paths;
 }
 
-// const { slug } = Astro.params;
 const page = Astro.props;
-
 const { Content } = await page.render();
 ---
 
