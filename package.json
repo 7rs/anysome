@@ -10,7 +10,7 @@
         "dev": "astro dev"
     },
     "dependencies": {
-        "@astrojs/check": "^0.7.0",
+        "@astrojs/check": "^0.8.1",
         "@astrojs/mdx": "3.1.2",
         "@astrojs/rss": "^4.0.7",
         "@astrojs/sitemap": "^3.1.6",
@@ -23,7 +23,7 @@
         "@iconify-json/mdi": "^1.1.67",
         "@iconify-json/simple-icons": "^1.1.108",
         "@playform/compress": "^0.0.13",
-        "astro": "4.11.3",
+        "astro": "4.11.5",
         "astro-compressor": "^0.4.1",
         "astro-expressive-code": "^0.35.3",
         "astro-icon": "^1.1.0",
