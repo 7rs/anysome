@@ -2,13 +2,18 @@
 import { Icon } from "astro-icon/components";
 import IconFlex from "@components/IconFlex.astro";
 import Menu from "@components/menu/Menu.svelte";
+import ScrollHideButton from "@components/menu/ScrollHideButton.svelte";
 
-const {...props} = Astro.props;
+const { ...props } = Astro.props;
 ---
 
-<header class="static-bar" {...props}>
-  <p>ANYSOME</p>
+<header class="static-bar color-main" {...props}>
+  <a class="color-inherit" href="/">
+    <p>ANYSOME</p>
+  </a>
   <IconFlex>
+    <ScrollHideButton client:only="svelte" />
+    <Icon name="mdi:translate" />
     <Icon name="line-md:sunny-filled-loop" />
     <Menu client:idle />
   </IconFlex>

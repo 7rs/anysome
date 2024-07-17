@@ -7,7 +7,7 @@ import { jsonPath, writeCollectionObject } from "@scripts/dexie-setup";
 const stackHash = await writeCollectionObject();
 ---
 
-<Base title="Main Page | Anysome" className="bg-slate-200 | sm:px-12 sm:py-12 px-3 py-6">
+<Base title="Main Page | Anysome" className="bg-slate-200 sm:px-12 sm:py-12 px-3 py-6">
   <section>
     <SearchBar client:only="svelte" isDev={import.meta.env.DEV} {stackHash} {jsonPath} />
   </section>

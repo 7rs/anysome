@@ -27,3 +27,17 @@
   svg
     display block
     color rgb(255, 255, 255)
+
+.hoverable
+  svg, svg:hover
+    transition all 100ms ease-in-out
+
+  svg:hover
+    transform scale(125%)
+
+.hoverable-disable
+  svg, svg:hover
+    transition unset
+
+  svg:hover
+    transform unset

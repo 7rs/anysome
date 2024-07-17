@@ -9,7 +9,7 @@ const { href, title, ...props } = Astro.props;
 
 {
   href ? (
-    <a class="block" href={href} title={title} {...props}>
+    <a class="block text-inherit" href={href} title={title} {...props}>
       <slot />
     </a>
   ) : (

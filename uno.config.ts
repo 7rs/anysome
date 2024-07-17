@@ -2,7 +2,7 @@ import { defineConfig } from 'unocss';
 import presetUno from '@unocss/preset-uno';
 
 const staticBar = {
-  'static-bar': 'bg-main text-black flex text-4xl py-4 px-4 justify-between items-center',
+  'static-bar': 'bg-gradient color-main flex text-4xl py-4 px-4 justify-between items-center',
   'menu-icons': 'flex gap-6',
 };
 
@@ -27,7 +27,10 @@ export default defineConfig({
   },
   rules: [
     ['bg-main', { background: 'var(--main-color)' }],
+    ['bg-sub', { background: 'var(--sub-color)' }],
+    ['bg-gradient', { background: 'var(--bg-gradient)' }],
     ['color-main', { color: 'var(--main-color)' }],
+    ['color-sub', { color: 'var(--sub-color)' }],
   ],
   theme: {
     breakpoints: {

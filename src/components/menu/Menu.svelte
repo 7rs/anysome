@@ -12,13 +12,14 @@
 </script>
 
 <article class="relative">
-  <button class="bg-transparent border-0 block" on:click={toggleMenu}>
+  <button class="block border-0 bg-transparent text-inherit" on:click={toggleMenu}>
     <Icon class="text-4xl" icon="line-md:menu" />
   </button>
   {#if $opened}
     <MenuBox>
-      <MenuItem href="/" icon="line-md:search">main</MenuItem>
-      <MenuItem href="/about" icon="line-md:question-circle">about</MenuItem>
+      <MenuItem href="/" icon="line-md:search">Main</MenuItem>
+      <MenuItem href="/about" icon="line-md:question-circle">About</MenuItem>
+      <MenuItem href="/license" icon="line-md:confirm">License</MenuItem>
     </MenuBox>
   {/if}
 </article>

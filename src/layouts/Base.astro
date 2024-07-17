@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 import Header from "@layouts/Header.astro";
 import Footer from "@layouts/Footer.astro";
 
@@ -21,26 +23,27 @@ const { title, lang = "ja", className = "", hideHeader = false, hideFooter = fal
 
 <html lang={lang}>
   <head>
+    <ViewTransitions />
     <title>{title}</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="format-detection" content="telephone=no,email=no,address=no" />
   </head>
-  <body class="min-h-dvh flex flex-col justify-center">
+  <body class="min-h-dvh flex flex-col overflow-x-clip">
     {
       !hideHeader && (
         <slot name="header">
-          <Header />
+          <Header transition:persist />
         </slot>
       )
     }
-    <main class:list={["grow", className]} {...props}>
+    <main class:list={["grow", className]} transition:animate="slide" {...props}>
       <slot />
     </main>
     {
       !hideFooter && (
         <slot name="footer">
-          <Footer />
+          <Footer transition:persist />
         </slot>
       )
     }
