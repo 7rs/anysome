@@ -2,7 +2,7 @@ import { defineConfig } from 'unocss';
 import presetUno from '@unocss/preset-uno';
 
 const staticBar = {
-  'static-bar': 'bg-black text-white flex text-4xl py-4 px-4 justify-between items-center',
+  'static-bar': 'bg-main text-black flex text-4xl py-4 px-4 justify-between items-center',
   'menu-icons': 'flex gap-6',
 };
 
@@ -22,13 +22,13 @@ const stackCard = {
 export default defineConfig({
   presets: [presetUno()],
   shortcuts: {
-    'anysome-app': 'flex flex-col gap-y-12 mx-auto',
-    'load-icon': 'w-25 h-25 mx-auto my-20 block',
-    'input-box': 'rounded-xl h-12 w-full border-none px-4 text-xl outline-none',
-    'result-list': 'grid gap-4',
     ...stackCard,
     ...staticBar,
   },
+  rules: [
+    ['bg-main', { background: 'var(--main-color)' }],
+    ['color-main', { color: 'var(--main-color)' }],
+  ],
   theme: {
     breakpoints: {
       sm: '400px',

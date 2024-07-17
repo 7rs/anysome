@@ -66,14 +66,18 @@
   $: stacks = liveQuery(() => dexieClient.stacks.toArray());
 </script>
 
-<article class="anysome-app">
-  <input class="input-box" type="text" bind:value={$query} placeholder="" />
+<article class="flex flex-col gap-y-12 mx-auto">
+  <input
+    class="rounded-xl h-12 w-full border-none px-4 text-xl outline-none"
+    type="text"
+    bind:value={$query}
+    placeholder="" />
   <!-- Search Result -->
   {#key $query}
     {#if hasQuery()}
       {#await search($query)}
         <!-- Has query but not complete -->
-        <Icon class="load-icon" icon="svg-spinners:3-dots-scale" />
+        <Icon class="w-25 h-25 mx-auto my-20 block" icon="svg-spinners:3-dots-scale" />
       {:then results}
         <!-- Has query but no error -->
         <div class="result-list">
@@ -100,3 +104,28 @@
     {/if}
   {/key}
 </article>
+
+<style lang="stylus">
+  article
+    max-width 1200px
+
+  input
+    box-shadow 0 0 8px rgba(0, 0, 0, 0.25)
+
+    background-color rgba(255, 255, 255, 0.5)
+
+    &:focus, &:not(:placeholder-shown)
+      background-color rgb(255, 255, 255)
+
+  .result-list
+    display grid
+    gap 1rem
+    grid-auto-rows 1fr
+    grid-template-columns repeat(1, 1fr)
+
+    @media screen and (min-width 800px)
+      grid-template-columns repeat(2, 1fr)
+
+    @media screen and (min-width 1200px)
+      grid-template-columns repeat(3, 1fr)
+</style>

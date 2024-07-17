@@ -15,11 +15,25 @@ export interface Stacks {
   icon?: string;
   url: string;
 }
-
-export const schemaName = 'anysomeMain';
-export const stacksTable = ['id', 'name', 'description', 'icon', 'url'].join(',');
+/**
+ * Columns of the table.
+ */
+export const stacksTable = ['++id', 'name', 'description', 'icon', 'url'].join(',');
+/**
+ * When the table definition changed, change the version.
+ * Don't use the float or double.
+ */
 export const version = 1;
-export const dexieClient = new Dexie(schemaName) as Dexie & { stacks: EntityTable<Stacks> };
+/**
+ * The schema name.
+ * This is the name in the entire IndexedDB, not Dexie.
+ */
+export const schemaName = 'anysomeMain';
+
+/**
+ * dexieClient is also available on client side.
+ */
+export const dexieClient = new Dexie(schemaName) as Dexie & { stacks: EntityTable<Stacks, 'id'> };
 dexieClient.version(version).stores({ stacks: stacksTable });
 
 export const jsonPath = 'public/stacks.json';

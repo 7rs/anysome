@@ -1,0 +1,15 @@
+---
+import Link from "@components/Link.astro";
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  href?: string;
+  icon: string;
+}
+
+const { href, icon } = Astro.props;
+---
+
+<Link {href}>
+  <Icon class="block" name={icon} />
+</Link>

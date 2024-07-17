@@ -1,16 +1,15 @@
 ---
 import { Icon } from "astro-icon/components";
-import Link from "@components/Link.astro";
 import IconFlex from "@components/IconFlex.astro";
+import Menu from "@components/menu/Menu.svelte";
 
 const {...props} = Astro.props;
 ---
 
 <header class="static-bar" {...props}>
   <p>ANYSOME</p>
-  <IconFlex requireNav>
-    <Link href="/"><Icon name="line-md:search" /></Link>
-    <Link href="/about"><Icon name="line-md:question-circle" /></Link>
+  <IconFlex>
     <Icon name="line-md:sunny-filled-loop" />
+    <Menu client:idle />
   </IconFlex>
 </header>
