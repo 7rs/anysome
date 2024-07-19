@@ -1,0 +1,12 @@
+---
+import Tag from "@components/details/Tag.astro";
+
+export interface Props {
+  tagList: string[];
+}
+const { tagList } = Astro.props;
+---
+
+<div class="flex justify-center gap-4 flex-wrap">
+  {tagList.map((tag) => <Tag href={`?q=${tag}`}>{tag}</Tag>)}
+</div>

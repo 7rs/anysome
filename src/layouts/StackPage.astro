@@ -3,8 +3,9 @@ import { Stack } from "@scripts/stack-meta.ts";
 
 import Heading from "@components/details/Heading.astro";
 import StackIcon from "@components/details/StackIcon.astro";
-import Tag from "@components/details/Tag.astro";
-import LabeledIcon from "@components/details/LabeledIcon.astro";
+import TagList from "@components/details/TagList.astro";
+
+import LinkList from "@components/details/LinkList.astro";
 
 export interface Props {
   frontmatter: Stack;
@@ -25,31 +26,10 @@ import "@styles/stack-page.styl"
       <Heading title={parsedFrontmatter.name}>{parsedFrontmatter.description}</Heading>
     </section>
     <section>
-      <div class="flex justify-center gap-4 flex-wrap">
-        {parsedFrontmatter.tags.map((tag) => <Tag href={`?q=${tag}`}>{tag}</Tag>)}
-      </div>
+      <TagList tagList={parsedFrontmatter.tags} />
     </section>
     <section>
-      <div class="flex gap-6 justify-center">
-        {
-          parsedFrontmatter.website && (
-            <LabeledIcon href={parsedFrontmatter.website} icon="mdi:web" data-pagefind-meta="website">
-              Website
-            </LabeledIcon>
-          )
-        }
-        {
-          parsedFrontmatter.repository?.startsWith("https://github") ? (
-            <LabeledIcon href={parsedFrontmatter.repository} icon="simple-icons:github" data-pagefind-meta="repository">
-              GitHub
-            </LabeledIcon>
-          ) : (
-            <LabeledIcon href={parsedFrontmatter.repository} icon="simple-icons:gitlab" data-pagefind-meta="repository">
-              GitLab
-            </LabeledIcon>
-          )
-        }
-      </div>
+      <LinkList website={parsedFrontmatter.website} source={parsedFrontmatter.repository}  />
     </section>
   </header>
   <section class="main-content my-8 px-4 md:px-8">

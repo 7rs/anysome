@@ -1,0 +1,49 @@
+---
+import LabeledIcon from "@components/details/LabeledIcon.astro";
+
+export interface Props {
+  website?: string;
+  source?: string;
+}
+
+const { website, source } = Astro.props;
+---
+
+<div class="flex gap-6 justify-center">
+  {
+    website && (
+      <LabeledIcon href={website} icon="mdi:web" data-pagefind-meta="website">
+        Website
+      </LabeledIcon>
+    )
+  }
+  {
+    () => {
+      if (!source) {
+        return;
+      }
+      const matchResult = source.match(/^(?:https?:\/\/)?([a-zA-Z0-9-.]+)(?:\/)?/);
+      const domain = matchResult && matchResult[1];
+      switch (domain) {
+        case "github.com":
+          return (
+            <LabeledIcon href={source} icon="simple-icons:github" data-pagefind-meta="source">
+              GitHub
+            </LabeledIcon>
+          );
+        case "gitlab":
+          return (
+            <LabeledIcon href={source} icon="simple-icons:gitlab" data-pagefind-meta="source">
+              GitLab
+            </LabeledIcon>
+          );
+        default:
+          return (
+            <LabeledIcon href={source} icon="simple-icons:git" data-pagefind-meta="source">
+              Source Code
+            </LabeledIcon>
+          );
+      }
+    }
+  }
+</div>

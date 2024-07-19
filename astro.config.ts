@@ -29,6 +29,16 @@ for (const [alias, targetPath] of Object.entries(tsconfig.compilerOptions.paths)
 
 // https://astro.build/config
 export default defineConfig({
+  image: {
+    remotePatterns: [{ protocol: 'https' }],
+  },
+  i18n: {
+    defaultLocale: 'ja',
+    locales: ['ja', 'en'],
+    fallback: {
+      en: 'ja',
+    },
+  },
   site: 'https://anyso.me',
   markdown: {
     gfm: false,

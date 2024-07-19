@@ -15,7 +15,7 @@
 <a {href}>
   <article class="stack-card">
     {#if icon?.startsWith("url:")}
-      <img class="stack-card-icon" src={icon.slice(4)} alt="icon">
+      <img class="stack-card-icon" src={`/_image?href=${encodeURIComponent(icon.slice(4))}`} alt="icon">
     {:else if icon}
       <Icon class="stack-card-icon" icon={icon} />
     {/if}

@@ -1,17 +1,20 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
+import { Image, inferRemoteSize } from "astro:assets";
 
 export interface Props {
-  icon: string;
+  icon?: string;
 }
-const {icon} = Astro.props;
+const { icon } = Astro.props;
+
+const url = icon?.startsWith("url:") ? icon.slice(4) : undefined;
+const { width, height } = await inferRemoteSize(url)
 ---
 
 {
-  icon &&
-    (icon.startsWith("url:") ? (
-      <img class="block my-6 mx-auto h-40 w-auto" src={icon.slice(4)} alt="icon" />
-    ) : (
-      <Icon class="block  my-6 mx-auto h-40 w-auto" name={icon} />
-    ))
+  url ? (
+    <Image class="block my-6 mx-auto h-40 w-auto" src={url} width={width} height={height} alt="icon" />
+  ) : (
+    <Icon class="block  my-6 mx-auto h-40 w-auto" name={icon} />
+  )
 }
